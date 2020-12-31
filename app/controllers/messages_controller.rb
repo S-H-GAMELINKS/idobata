@@ -7,12 +7,20 @@ class MessagesController < ApplicationController
   
     def create
       @message = @user.messages.create!(message_params)
-  
-      redirect_to @user
+
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to @user }
+      end
     end
 
     def update
         @message = @user.messages.update!(message_params)
+
+        respond_to do |format|
+            format.turbo_stream
+            format.html { redirect_to @user }
+        end
     end
   
     private
