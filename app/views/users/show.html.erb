@@ -1,2 +1,9 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
+
+<div id="messages">
+  <%= render @user.messages %>
+</div>
+
+<%= link_to "New Message", new_user_message_path(@user) %>
+
