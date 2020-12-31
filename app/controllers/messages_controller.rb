@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-    before_action :set_user, only: [ :new :create, :update, :destroy ]
+    before_action :set_user, only: [ :new, :create, :update, :destroy ]
   
     def new
       @message = @user.messages.new
